@@ -1,8 +1,9 @@
 import requests
-import xml.etree.ElementTree as ET
 import os
 import json
 import sys
+
+output_dir = '/path/to/save/location'
 
 scriptContentStart = '<script id="__NEXT_DATA__" type="application/json">'
 scriptContentEnd = '</script>'
@@ -17,10 +18,6 @@ file_format = {
     'opus': 'ogg',
     'aac': 'ogg'
 }
-
-url = 'https://share.yoto.co/s/2hdbjeu8BGkCt4nD0xdtbt'
-output_dir = '/mnt/c/Users/joema/Downloads/Yoto/'
-
 
 def fetch_and_parse_chapters_v1(url):
     response = requests.get(url)
